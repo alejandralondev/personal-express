@@ -1,0 +1,69 @@
+body {
+  background-image: linear-gradient(to right, rgba(180, 130, 216, 0.717), #d4e9fc); 
+  text-align: center;
+  font-family: 'Carter One', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: rgba(180, 130, 216, 0.717); 
+  font-size: 70px;
+  font-family: 'Bungee Shade', Arial, Helvetica, sans-serif;
+}
+h3 {
+  margin-top: 40px;
+}
+h2, h3 {
+  color: #333;
+  margin-bottom: -15px;
+}
+
+p {
+  text-align: center;
+  color: #000000d0;
+  font-style: italic;
+  text-shadow: #87ceeb 1px 0 10px;
+  margin-top: -30px;
+  padding: 5px;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input {
+  padding: 8px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #87ceeb; /* Sky Blue */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+ul.bucketitems {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bucketitems li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #777; /* Dim Gray for completed items */
+}
+
+/* Add more styles as needed */

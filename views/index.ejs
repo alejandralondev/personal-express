@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bucket List App</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Carter+One&family=Merienda:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Bucket List</h1>
+  <p>What are your goals and dreams?</p>
+  <p>Add a bucket list item, mark "complete" when accomplished or "delete" if you change your mind about it...</p>
+
+  <h2>Dream away...</h2>
+  <form action="/bucketlist" method="POST">
+    <input type="text" placeholder="Item" name="item" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <!-- we are building an li , we got back an array that had 2 objects in it, so the for loop will run 2 times, and each time it runs its adding an li to the html document -->
+  <!-- so since we had 2 documents in our collection, 
+    we got 2 objects back
+    we passed those 2 objects into our ejs
+    the ejs for loop will run twice
+    building an li for each of the documents we had
+    once this is done, all the crap disappears
+    and we have a raw html file 
+    that we then respond back to the user with
+  -->
+  <h3>Bucket Items</h3>
+  <ul class="bucketitems">
+    <% for(var i=0; i<bucketlist.length; i++) {%>
+      <li id="<%= bucketlist[i]._id %>" class="message">
+        <span class="<%= bucketlist[i].complete ? 'completed' : '' %>">
+          <%= bucketlist[i].complete ? '<del>' + bucketlist[i].item + '</del>' : bucketlist[i].item %>
+        </span>
+        <span>
+          <button onclick="completeItem('<%= bucketlist[i]._id %>')">
+            <%= bucketlist[i].complete ? 'Incomplete' : 'Complete' %>
+          </button>
+        </span>
+        <span>
+          <button onclick="deleteItem('<%= bucketlist[i]._id %>')">Delete</button>
+        </span>
+      </li>
+    <% } %>
+  </ul>
+  
+  
+  
+
+  <script src="main.js"></script>
+</body>
+</html>
